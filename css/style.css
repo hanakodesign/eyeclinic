@@ -1,0 +1,847 @@
+@charset "UTF-8";
+
+body {
+	font-family: 'Noto Sans JP', sans-serif;
+	color: #1f2b2c;
+	letter-spacing: 0.1em;
+}
+
+header {
+	width: 100%;
+	height: 80px;
+	background-color: #9cd5dd;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+}
+
+.header-wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	justify-content:space-between;
+}
+
+.logo-img {
+	width: 170px;
+	padding-top: 25px;
+}
+
+.pc-menu {
+	padding-top: 27px;
+	font-size: 14px;
+	letter-spacing: 2px;
+}
+
+.pc-menu ul {
+	display: flex;
+	justify-content: space-around;
+}
+
+.pc-menu li {
+	list-style: none;
+	padding: 0 10px;
+}
+
+.pc-menu a {
+	color: #1f2b2c;
+	font-weight: normal;
+	text-decoration: none;
+	background:
+    linear-gradient(currentColor 0 0)
+    bottom /var(--d, 0) 1px
+    no-repeat;
+  transition: 0.3s;
+}
+
+.pc-menu a:hover {
+	--d: 100%;
+}
+
+.header-tel {
+	display: block;
+	text-align: center;
+	padding-top: 18px;
+}
+
+.header-tel img {
+	width: 17px;
+	margin-right: 7px;
+}
+
+.header-tel a {
+	background-color: #fff5a5;
+	color: #1f2b2c;
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+	max-width: 240px;
+	padding: 6px 20px;
+	border-radius: 20px;
+	transition: 0.3s ease-in-out;
+}
+
+.header-tel a:hover {
+	background-color: #f4f6f6;
+}
+
+.header-tel p {
+	font-size: 12px;
+	padding-top: 5px;
+}
+
+.container {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 100px 0;
+	text-align: center;
+	opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+
+/* フェードイン時に入るクラス */
+.is-fadein {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+#main-visual {
+	background-image: url(../images/main-pc.jpg);
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+	padding-top: 80px;
+}
+
+.main-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.copy {
+	width: 50%;
+	position: absolute;
+	bottom: 0;
+	padding-left: 50px;
+	padding-bottom: 50px;
+	text-shadow: 1px 1px 6px #707070;
+}
+
+.copy-text {
+	color: #fff;
+	font-size: 35px;
+	font-weight: bold;
+	letter-spacing: 0.2em;
+}
+
+h2 {
+	color: #fff;
+	font-size: 55px;
+	letter-spacing: 0.15em;
+	padding-bottom: 25px;
+}
+
+.contents {
+	color: #fff;
+	font-size: 18px;
+	line-height: 2;
+	font-weight: bold;
+}
+
+.info {
+	width: 40%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 20px;
+	margin-bottom: 50px;
+}
+
+.info-title {
+	font-size: 20px;
+	font-weight: normal;
+	padding-bottom: 10px;
+}
+
+.info-list li {
+	font-size: 14px;
+	font-weight: lighter;
+	list-style: none;
+	padding: 10px 0;
+	border-bottom: 1px solid #1f2b2c;
+}
+
+.info-list a {
+	color: #1f2b2c;
+	text-decoration: none;
+}
+
+.info-list a:hover {
+	opacity: 0.7;
+}
+
+
+h3 {
+	font-family: 'Josefin Sans', sans-serif;
+	color: #9cd5dd;
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: 0.2em;
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+.message-wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 60px;
+}
+
+.doctor-img img {
+	width: 480px;
+	padding-top: 25px;
+}
+
+.message-text {
+	background-color: #fff;
+	padding-left: 50px;
+	text-align: left;
+}
+
+h4 {
+	font-size: 24px;
+	font-weight: normal;
+	padding-bottom: 10px;
+}
+
+p {
+	font-size: 16px;
+	font-weight: lighter;
+	line-height: 2;
+}
+
+.message-text p {
+	padding: 10px 0px;
+}
+
+.doctor-name {
+	font-size: 18px;
+}
+
+.button {
+	background: #fff5a5;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 240px;
+  padding: 10px 25px;
+  color: #1f2b2c;
+  transition: 0.3s ease-in-out;
+  font-weight: bold;
+	text-decoration: none;
+	border-radius: 25px;
+}
+
+.button:before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  right: -2em;
+  transform: translateY(calc(-50% - 2px)) rotate(30deg);
+  width: 12px;
+  height: 1px;
+  background-color: #1f2b2c;
+  transition: 0.3s;
+}
+.button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -2em;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 1px;
+  background-color: #1f2b2c;
+  transition: 0.3s;
+}
+
+.button:hover:before, .button:hover:after {
+  right: -2.5em;
+}
+
+.button:hover {
+  background: #f4f6f6;
+}
+
+#flow {
+	background-color: #f4f6f6;
+}
+
+.flow-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-bottom: 40px;
+}
+
+.flow-item {
+	width: 30%;
+  text-align: center;
+  padding: 30px 20px;
+  margin-bottom: 40px;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 30px;
+}
+
+.flow-item img {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.flow-text {
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 15px;
+}
+
+.flow-text p {
+	line-height: 1.8;
+}
+
+h5 {
+	display: inline-block;
+	background-color: #9cd5dd;
+	color: #fff;
+	font-size: 22px;
+	font-weight: normal;
+	width: 100px;
+	height: 35px;
+	border-radius: 10px;
+}
+
+.flow-text p {
+	text-align: justify;
+	padding-top: 15px;
+}
+
+#photo {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 100px 0;
+	text-align: center;
+}
+
+.autoplay {
+	width: 750px;
+	margin: 0 auto;
+}
+
+.slick-prev,
+.slick-next {
+	display: none;
+}
+
+#staff {
+	background-color: #f4f6f6;
+}
+
+.staff-wrapper {
+	display: inline-flex;
+	justify-content: space-between;
+	text-align: center;
+}
+
+.member {
+	width: 31%;
+	padding: 10px 10px 25px 10px;
+	background-color: #fff;
+	border-radius: 30px;
+}
+
+.member img {
+	width: 100%;
+}
+
+.staff-text {
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+.staff-text h5 {
+	width: 60%;
+}
+
+.staff-text p {
+	text-align: justify;
+	padding-top: 15px;
+}
+
+p.staff-name {
+	text-align: center;
+}
+
+table {
+	width: 80%;
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+
+th {
+	font-size: 24px;
+	font-weight: normal;
+	padding: 15px 0;
+}
+
+td {
+	font-size: 22px;
+	padding: 15px 0;
+}
+
+th, td {
+    border-bottom: 1px solid #dedede;
+}
+
+.point {
+	color: #9cd5dd;
+}
+
+.access-wrapper {
+	margin-top: 100px;
+	display: flex;
+	justify-content: space-around;
+}
+
+iframe {
+	width: 600px;
+	height: 400px;
+	border-radius: 30px;
+}
+
+.access {
+	text-align: left;
+	padding-top: 20px;
+}
+
+.access-text {
+	padding-bottom: 30px;
+}
+
+.access p {
+	padding-top: 15px;
+}
+
+.access img {
+	width: 18px;
+	margin-right: 7px;
+}
+
+.access-tel {
+	color: #1f2b2c;
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+	background:
+		linear-gradient(currentColor 0 0)
+		bottom /var(--d, 0) 1px
+		no-repeat;
+	transition: 0.3s;
+	}
+
+.access a:hover {
+--d: 100%;
+}
+
+.p-reserve {
+	font-size: 14px;
+}
+
+footer {
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	background-color: #9cd5dd;
+}
+
+footer p {
+	font-family: 'Josefin Sans', sans-serif;
+	color: #fff;
+	font-size: 18px;
+	padding-top: 2px;
+}
+
+/*===============================================
+PC : 画面の横幅が769px以上
+=================================================*/
+
+.nav_toggle,
+.nav {
+  display: none;
+}
+
+.sp-menu {
+	display: none;
+}
+
+.sp-tel {
+	display: none;
+}
+
+.br-sp {
+	display: none;
+}
+
+/*ここからメディアクエリで各デバイスサイズに書き分けます
+CSSは上から下に継承されるので、変化させたいところだけ書けばOK*/
+
+
+
+/*================================================
+Tablet : 画面の横幅が768pxまで
+==================================================*/
+@media screen and (max-width: 768px){
+
+
+
+}
+
+/*================================================
+Smartphone :  画面の横幅が640pxまで
+=================================================*/
+@media screen and (max-width:640px){
+
+header {
+	height: 60px;
+}
+
+.logo-img {
+	width: 150px;
+	padding-top: 18px;
+	margin-left: 110px;
+}
+
+.pc-menu {
+	display: none;
+}
+
+.sp-menu {
+	display: block;
+}
+
+.sp-tel {
+	display: block;
+}
+
+.br-sp {
+	display: block;
+}
+
+.br-pc {
+	display: none;
+}
+
+header .header-tel {
+	display: none;
+}
+
+/*　ハンバーガーボタン　*/
+.hamburger {
+  display : block;
+  position: fixed;
+  z-index : 3;
+  right : 13px;
+  top   : 8px;
+  width : 40px;
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+	background-color: #9cd5dd;
+}
+
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : #fff;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition   : 0.3s ease-in-out;
+  transition        : 0.3s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  background :#fff;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform   : rotate(-45deg);
+  transform        : rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 16px;
+  background :#fff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform   : rotate(45deg);
+  transform        : rotate(45deg);
+}
+
+nav.header-menu {
+  position: fixed;
+  z-index : 2;
+  top  : 0;
+  left : 0;
+  color: #fff;
+  background: #9cd5dd;
+	opacity: 0.5;
+  text-align: center;
+  width: 100%;
+  opacity: 100;
+  transition: opacity .6s ease, visibility .6s ease;
+	display: none;
+}
+
+nav.header-menu ul {
+	display: block;
+  margin: 0 auto;
+  margin-top: 80px;
+  width: 100%;
+	height: 100vh;
+	font-weight: normal;
+}
+
+nav.header-menu ul li {
+  list-style-type: none;
+  padding: 15px 0;
+  width: 100%;
+  transition: .4s all;
+}
+nav.header-menu ul li:last-child {
+  padding-bottom: 0;
+}
+
+nav.header-menu ul li a {
+  display: block;
+  color: #fff;
+  padding: 1em 0;
+  text-decoration :none;
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.header-menu.active {
+  display: block;
+}
+
+#main-visual {
+	height: 650px;
+	background-image: url(../images/main-sp.jpg);
+	background-size: cover;
+	padding-top: 0;
+}
+
+.container {
+	width: 375px;
+	padding: 80px 0;
+}
+
+.main-wrapper {
+	display: block;
+	justify-content: space-around;
+}
+
+.copy {
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+  top: 60px;
+  height: 180px;
+	text-shadow: 1px 1px 6px #426917;
+}
+
+.copy-text {
+	font-size: 18px;
+	padding-left: 10px;
+}
+
+h2 {
+	font-size: 35px;
+	padding-bottom: 8px;
+}
+
+.contents {
+	font-size:14px;
+	line-height: 1.5;
+}
+
+.sp-tel {
+	position: absolute;
+	top: 245px;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.sp-tel a {
+	background-color: #fff5a5;
+	color: #1f2b2c;
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: none;
+	max-width: 240px;
+	padding: 6px 20px;
+	border-radius: 20px;
+	transition: 0.3s ease-in-out;
+}
+
+.sp-tel img {
+	margin-right: 5px;
+}
+
+.sp-tel p {
+	color: #fff;
+	font-size: 14px;
+	font-weight: normal;
+	padding-top: 2px;
+	text-shadow: 1px 1px 6px #426917;
+}
+
+.info {
+	width: 100%;
+	bottom: 0;
+	padding: 15px;
+	margin-bottom: 0;
+	position: relative;
+	top: 420px;
+}
+
+.info-title {
+	line-height: 1;
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+.info-list li {
+	font-size: 13px;
+}
+
+h3 {
+	padding-bottom: 40px;
+}
+
+.message-wrapper {
+	display: block;
+	padding-bottom: 35px;
+}
+
+.doctor-img img {
+	width: 300px;
+	padding-top: 0;
+}
+
+.message-text {
+	padding: 10px 35px;
+	text-align: justify;
+}
+
+.doctor-name {
+	text-align: center;
+}
+
+.promise {
+	display: none;
+}
+
+#flow h3 {
+	padding-bottom: 0;
+}
+
+.flow-list {
+	display: block;
+	margin-bottom: 60px;
+}
+
+.flow-item {
+	width: 80%;
+	margin: 40px auto;
+	padding-bottom: 30px;
+}
+
+.flow-item img {
+	width: 70%;
+}
+
+#photo {
+	max-width: 375px;
+	padding: 80px 0;
+}
+
+.autoplay {
+	width: 300px;
+}
+
+.staff-wrapper {
+	display: block;
+}
+
+.member {
+	width: 80%;
+	margin: 0 auto;
+	padding-bottom: 35px;
+	margin-bottom: 30px;
+}
+
+.br-pc {
+	display: none;
+}
+
+th {
+    font-size: 14px;
+}
+
+td {
+    font-size: 15px;
+}
+
+.access-wrapper {
+	display: block;
+}
+
+iframe {
+	width: 350px;
+	height: 250px;
+	border-radius: 15px;
+}
+
+.access {
+  padding: 20px 30px;
+	text-align: center;
+}
+
+.access p {
+		line-height: 1.8;
+}
+
+#access .container {
+	padding-bottom: 40px;
+}
+
+}
